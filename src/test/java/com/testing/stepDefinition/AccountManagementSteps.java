@@ -63,11 +63,12 @@ public class AccountManagementSteps {
     @When("I enter  {string} {string}")
     public void iEnter(String Email, String Password) {
         SignInPagePO signInPagePO = new SignInPagePO(driver);
-        signInPagePO.ClickSignInButton();
+        signInPagePO.enterEmail(Email);
+        signInPagePO.enterPassword(Password);
 
     }
 
-    @And("I click on SignIn")
+    @And("I click on SignInButton")
     public void iClickSignInButton() {
         SignInPagePO signInPagePO = new SignInPagePO(driver);
         signInPagePO.ClickSignInButton();
@@ -79,4 +80,6 @@ public class AccountManagementSteps {
         String ActualResult = driver.getTitle();
         Assert.assertEquals(ExpectedResult, ActualResult);
     }
+
+
 }

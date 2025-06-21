@@ -11,7 +11,7 @@ public class HomePagePO {
     @FindBy(linkText = "Create an Account")
     public static WebElement CreateAccountLink;
 
-    @FindBy(linkText = "SignIn")
+    @FindBy(linkText = "Sign In")
     public static WebElement SignInLink;
 
     //Stage 2 - Initialize Web Element using Selenium WebDriver

@@ -9,13 +9,13 @@ public class SignInPagePO {
 
     //Step 1 - Element locators
 
-    @FindBy(id = "email")
+    @FindBy(id="email")
     public static WebElement EmailField;
 
     @FindBy(name="login[password]")
     public static WebElement PasswordField;
 
-    @FindBy(css = "send2 > span")
+    @FindBy(css = "#send2 > span")
     public static WebElement ClickSignInButton;
 
 
