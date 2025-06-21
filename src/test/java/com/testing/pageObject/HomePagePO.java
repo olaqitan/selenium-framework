@@ -7,14 +7,14 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class HomePagePO {
-    //Element locator
+    //Stage 1 - Element locator
     @FindBy(linkText = "Create an Account")
     public static WebElement CreateAccountLink;
 
     @FindBy(linkText = "SignIn")
     public static WebElement SignInLink;
 
-    //Initialize Web Element using Selenium WebDriver
+    //Stage 2 - Initialize Web Element using Selenium WebDriver
     public HomePagePO(WebDriver driver){
         PageFactory.initElements(driver, this);
 
@@ -28,6 +28,7 @@ public class HomePagePO {
     public void clickSignInLink(){
         SignInLink.click();
     }
+
 
 
 }

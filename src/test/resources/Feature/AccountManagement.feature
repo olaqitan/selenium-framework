@@ -11,7 +11,7 @@ Feature: Account Management
 
     Examples:
       | FirstName | LastName | Email              | Password  | ConfirmPassword |
-      | John      | Doe      | johndoe1@gmail.com | London123 | London123       |
+      | John      | Doe      | johndoe2@gmail.com | London123 | London123       |
 
   Scenario Outline: Create an account - Duplicate account creation not allowed
     Given I am on create an account page
@@ -22,16 +22,16 @@ Feature: Account Management
 
     Examples:
       | FirstName | LastName | Email              | Password  | ConfirmPassword |
-      | John      | Doe      | johndoe1@gmail.com | London123 | London123       |
+      | John      | Doe      | johndoe2@gmail.com | London123 | London123       |
 
   @AccountLogin
   Scenario Outline: Account Login - Registered customer
     Given I am on Account login page
     When I enter  "<Email>" "<Password>"
-    And I click on SignIn
-    Then My Account Page is displayed
+    And I click on SignInButton
+    Then Account is login successfully
 
 
     Examples:
       | Email              | Password  |
-      | johndoe1@gmail.com | London123 |
+      | johndoe2@gmail.com | London123 |

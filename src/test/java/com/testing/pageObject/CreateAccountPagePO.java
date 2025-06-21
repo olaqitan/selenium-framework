@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class CreateAccountPagePO {
-    //Element locator
+    //Stage 1 - Element locator
     @FindBy(id = "firstname")
     public static WebElement FirstNameField;
 
@@ -25,13 +25,13 @@ public class CreateAccountPagePO {
     @FindBy(css = "#form-validate > div > div.primary > button > span")
     public static WebElement CreateAccountButton;
 
-    //Initialize Web Element using Selenium WebDriver
+    //Stage 2 - Initialize Web Element using Selenium WebDriver
     public CreateAccountPagePO(WebDriver driver) {
         PageFactory.initElements(driver, this);
 
     }
 
-    //Write Method to Perform Element Action
+    //Stage 3 - Write Method to Perform Element Action
     public void enterFirstName(String FirstName){
         FirstNameField.sendKeys(FirstName);
     }

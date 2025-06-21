@@ -3,6 +3,7 @@ package com.testing.stepDefinition;
 import com.testing.cucumber.Hooks;
 import com.testing.pageObject.CreateAccountPagePO;
 import com.testing.pageObject.HomePagePO;
+import com.testing.pageObject.SignInPagePO;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -12,6 +13,7 @@ import org.openqa.selenium.WebDriver;
 
 public class AccountManagementSteps {
     WebDriver driver = Hooks.driver;
+
     @Given("I am on create an account page")
     public void iAmOnCreateAnAccountPage() {
         HomePagePO homePagePO = new HomePagePO(driver);
@@ -31,7 +33,7 @@ public class AccountManagementSteps {
     }
 
     @And("I click on Create an account")
-    public void iClcikOnCreateAnAccount() {
+    public void iClickOnCreateAnAccount() {
         CreateAccountPagePO createAccountPagePO = new CreateAccountPagePO(driver);
         createAccountPagePO.clickCreateAnAccountButton();
 
@@ -54,15 +56,26 @@ public class AccountManagementSteps {
 
     @Given("I am on Account login page")
     public void iAmOnAccountLoginPage() {
+        HomePagePO homePagePO = new HomePagePO(driver);
+        homePagePO.clickSignInLink();
     }
 
     @When("I enter  {string} {string}")
     public void iEnter(String Email, String Password) {
+        SignInPagePO signInPagePO = new SignInPagePO(driver);
+        signInPagePO.ClickSignInButton();
+
     }
 
     @And("I click on SignIn")
-    public void iClickOnSignIn() {
-        String ExpectedResult = "Account Login Registered Customer";
+    public void iClickSignInButton() {
+        SignInPagePO signInPagePO = new SignInPagePO(driver);
+        signInPagePO.ClickSignInButton();
+    }
+
+    @Then("Account is login successfully")
+    public void accountIsLoginSuccessfully() {
+        String ExpectedResult = "Customer SignIn";
         String ActualResult = driver.getTitle();
         Assert.assertEquals(ExpectedResult, ActualResult);
     }
