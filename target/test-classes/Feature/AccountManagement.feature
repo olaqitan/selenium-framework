@@ -40,7 +40,7 @@ Feature: Account Management
     Given I am on Account login page
     When I enter  "<Email>" "<Password>"
     And I click on SignInButton
-    Then Error should display showing the account sign-in was incorrect or account disabled
+    Then Error should display showing Unregistered customer cannot login
 
     Examples:
       | Email             | Password  |
